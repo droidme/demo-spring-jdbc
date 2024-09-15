@@ -26,18 +26,14 @@ class DemoSpringJdbcApplicationTests {
 
     @Test
     void schemaTableExists() {
-
         assertThat(jdbcTemplate)
                 .isNotNull();
-
         Integer numTables = jdbcTemplate
                 .queryForObject(
                         "select count(*) from information_schema.tables"
                         , Integer.class);
-
         assertThat(numTables)
                 .isGreaterThan(0);
-
     }
 
     @Test
